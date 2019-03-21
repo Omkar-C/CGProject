@@ -1,6 +1,5 @@
 from tkinter import *
 from BinaryTree import *
-from time import sleep
 
 CanvasHeight = 650
 CanvasWidth = 1000
