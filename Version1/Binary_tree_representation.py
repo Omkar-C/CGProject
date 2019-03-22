@@ -57,9 +57,7 @@ def get_Input():
     temp = temp.split(",")
     BinTree(temp)
 
-
 master = Tk()
-
 
 inputLabel = Label(master,text = "Enter Data\n(comma seperated)")
 inputLabel.grid(row = 0 , column = 0,sticky = NW)
@@ -76,6 +74,4 @@ clearButton.grid(row = 0 , column = 5,sticky = E)
 DrawBoard = Canvas(master, height = CanvasHeight, width = CanvasWidth,bg = 'white')
 DrawBoard.grid(row = 1,rowspan = CanvasHeight,columnspan = CanvasWidth)
 
-
 master.mainloop()
-
