@@ -8,7 +8,6 @@ X = int(CanvasHeight//1.5 + 30)
 Y = 50
 offset = 30
 
-
 def clear_DrawBoard():
     inputEntry.delete(0,END)
     DrawBoard.delete('all')
@@ -16,7 +15,6 @@ def clear_DrawBoard():
 def Circle(x,y,Value):
     DrawBoard.create_oval(x-offset,y-offset,x+offset,y+offset,width = 4,outline = 'blue')
     DrawBoard.create_text(x,y,text = str(Value))
-
 
 def SlantLine(x,y,rol):
     if 1 == rol:
@@ -78,4 +76,3 @@ DrawBoard.grid(row = 1,column = 0,rowspan = CanvasHeight,columnspan = CanvasWidt
 
 
 master.mainloop()
-
