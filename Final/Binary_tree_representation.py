@@ -36,7 +36,7 @@ def printBinaryTree(Root):
     if Root.right:
         SlantLine(Root.x,Root.y,0)
         printBinaryTree(Root.right)
-
+        
 def BinTree(Data):
     #inialize points
 
@@ -53,11 +53,6 @@ def BinTree(Data):
         printBinaryTree(Root)
         DrawBoard.update()
 
-
-
-
-
-
 def get_Input():
     temp = inputEntry.get()
     if temp == '':
@@ -67,7 +62,6 @@ def get_Input():
     DrawBoard.delete('all')
     DrawBoard.update()
     BinTree(temp)
-
 
 master = Tk()
 master.configure(bg = 'light gray')
@@ -87,6 +81,4 @@ clearButton.grid(row = 0 , column = 5,sticky = E)
 DrawBoard = Canvas(master, height = CanvasHeight, width = CanvasWidth,bg = 'white')
 DrawBoard.grid(row = 1,column = 0,rowspan = CanvasHeight,columnspan = CanvasWidth)
 
-
 master.mainloop()
-
