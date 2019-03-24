@@ -2,10 +2,11 @@ from tkinter import *
 from BinaryTree import *
 from    time import sleep
 
+#The White board on which binary tree is generated
 CanvasHeight = 600
 CanvasWidth = 950
 word = ('arial',18,'bold')
-X = int(CanvasHeight//1.5 + 30)
+X = int(CanvasHeight//1.5 + 60)
 Y = 50
 offset = 30
 
@@ -14,7 +15,10 @@ def clear_DrawBoard():
     inputEntry.delete(0,END)
     DrawBoard.delete('all')
 
+
 def Circle(x,y,Value):
+    
+    ''' We take origin value and the data to be displayed in circle. The offset is used to calculate the circle fit square in tkinter.'''
     DrawBoard.create_oval(x-offset,y-offset,x+offset,y+offset,width = 4,outline = 'blue')
     DrawBoard.create_text(x,y,text = str(Value))
 
@@ -27,6 +31,7 @@ def SlantLine(x,y,rol):
         #right slanted line
         DrawBoard.create_line(x,y+offset,x+100,y+offset+40,width = 3,fill = 'red')
 
+
 def printBinaryTree(Root):
     if Root:
         Circle(Root.x,Root.y,Root.data)
@@ -36,10 +41,11 @@ def printBinaryTree(Root):
     if Root.right:
         SlantLine(Root.x,Root.y,0)
         printBinaryTree(Root.right)
-        
-def BinTree(Data):
-    #inialize points
 
+
+def BinTree(Data):
+    
+    #inialize points
     Data = list(map(int,Data))
     Root = Node(Data[0])
     Root.x = X
@@ -53,6 +59,7 @@ def BinTree(Data):
         printBinaryTree(Root)
         DrawBoard.update()
 
+
 def get_Input():
     temp = inputEntry.get()
     if temp == '':
@@ -62,6 +69,7 @@ def get_Input():
     DrawBoard.delete('all')
     DrawBoard.update()
     BinTree(temp)
+
 
 master = Tk()
 master.configure(bg = 'light gray')
